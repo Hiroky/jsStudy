@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello World!</title>
+	</head>
+	<body>
+		<link rel="stylesheet" href="lib/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/ui-bootstrap-tpls-0.14.3.min.js" ></script>
+		<script>
+			var cproc = require('child_process');
+			var demoApp = angular.module('demoApp', ['ui.bootstrap']);
+			demoApp.controller("loopCtrl", function($scope) {
+				$scope.week = [
+					{"jp":"月","en":"Monday"},
+					{"jp":"火","en":"Tuesday"},
+					{"jp":"水","en":"Wednesday"},
+					{"jp":"木","en":"Thursday"},
+					{"jp":"金","en":"Friday"},
+					{"jp":"土","en":"Saturday"},
+					{"jp":"日","en":"Sunday"}
+				];
+				
+				$scope.dirResult = "" + cproc.execSync('dir');
+			});
+
+		</script>
+		
+		<h1>Hello World!</h1>
+		
+    <!--
+		We are using node <script>document.write(process.versions.node)</script>,
+		Chrome <script>document.write(process.versions.chrome)</script>,
+		and Electron <script>document.write(process.versions.electron)</script>.
+	-->
+	
+		<input type="text" ng-model="rate">		
+		<uib-rating ng-model="rate"></uib-rating>
+		
+		<!--<form novalidate name="myForm">
+			<p><input type="text" name="name" ng-model="name" required ng-minlength="2" ng-maxlength="5"></p>
+			<p>{{name}}</p>
+			<p ng-show="myForm.name.$error.required">未入力</p>
+			<p ng-show="myForm.name.$error.minlength">2文字未満</p>
+			<p ng-show="myForm.name.$error.maxlength">5文字を超えている</p>
+		</form>-->
+		
+		<div ng-controller="loopCtrl">
+			<input ng-model="query" type="text" placeholder="表示したい曜日を入力" autofocus>
+			<ul>
+				<li ng-repeat="day in week | filter: query ">{{day.jp}} {{day.en}}</li>
+			</ul>
+
+			<p>{{week.length}} days</p>
+			<ul>
+				<li ng-repeat="day in week">{{day.jp}} {{day.en}}</li>
+			</ul>
+			
+			<p>{{dirResult}}</p>
+		</div>
+ 	</body>
+</html>
