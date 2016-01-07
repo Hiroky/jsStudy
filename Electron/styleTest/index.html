@@ -14,7 +14,7 @@
 
 <body ng-controller="loopCtrl" ng-keydown="keydown($event)">
 
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<!-- <nav class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-collapse collapse" id="navbar-main">
 			<ul class="nav navbar-nav">
 				<li><a href="">Top</a></li>
@@ -29,7 +29,7 @@
 				<li><a>Wiki</a></li>
 			</ul>
 		</div>
-	</nav>
+	</nav> -->
 
 	<!--<ul class="nav navbar-nav navbar-right">
 		<li class="dropdown" dropdown>
@@ -66,16 +66,10 @@
 			</div>
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h1 class="page-header">Dashboard</h1>
-				<h2 class="sub-header">Section title</h2>
-
-				<ul>
-					<li ng-repeat="a in articles">{{a.title}}</li>
-				</ul>
+				<div ng-include="'./sourcelist.html'"></div>
 			</div>
 		</div>
 	</div>
-
 
 
 	<!--<input ng-model="test" />
