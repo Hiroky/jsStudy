@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="demoApp">
 
 <head>
@@ -9,102 +9,35 @@
 	<script src="index.js"></script>
 	<!--<link rel="stylesheet" href="lib/bootstrap-3.3.6-dist/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="./lib/umi/css/bootstrap.css">
-	<link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body ng-controller="loopCtrl" ng-keydown="keydown($event)">
-
-	<!-- <nav class="navbar navbar-default navbar-fixed-top">
-		<div class="navbar-collapse collapse" id="navbar-main">
-			<ul class="nav navbar-nav">
-				<li><a href="">Top</a></li>
-				<li class="dropdown" dropdown>
-					<a class="dropdown-toggle" dropdown-toggle>Demo <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Japanese Page</a></li>
-						<li><a href="#">English Page</a></li>
+	<div class="window-container">
+		<div class="main-workspace">
+			
+			<div class="side-panel">
+				<div class="sidebar-container">
+					<ul class="nav nav-sidebar">
+						<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">Reports</a></li>
+						<li><a href="#">Analytics</a></li>
+						<li><a href="#">Export</a></li>
 					</ul>
-				</li>
-				<li><a>Download</a></li>
-				<li><a>Wiki</a></li>
-			</ul>
-		</div>
-	</nav> -->
-
-	<!--<ul class="nav navbar-nav navbar-right">
-		<li class="dropdown" dropdown>
-			<a href class="dropdown-toggle" dropdown-toggle>ユーザー <span class="caret"></span></a>
-			<ul class="dropdown-menu">
-				<li ng-class="{ active: $state.includes('profile') }"><a ui-sref="profile">プロフィール</a></li>
-				<li class="divider"></li>
-				<li><a href ng-click="common.logout()">ログアウト</a></li>
-			</ul>
-		</li>
-	</ul>-->
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-					<li><a href="#">Reports</a></li>
-					<li><a href="#">Analytics</a></li>
-					<li><a href="#">Export</a></li>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="">Nav item</a></li>
-					<li><a href="">Nav item again</a></li>
-					<li><a href="">One more nav</a></li>
-					<li><a href="">Another nav item</a></li>
-					<li><a href="">More navigation</a></li>
-				</ul>
-				<ul class="nav nav-sidebar">
-					<li><a href="">Nav item again</a></li>
-					<li><a href="">One more nav</a></li>
-					<li><a href="">Another nav item</a></li>
-				</ul>
+				</div>
 			</div>
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<div ng-include="'./sourcelist.html'"></div>
+			<div class="main-panel">
+				<div class="main-container">
+					<div class="main-content" ng-include="'./sourcelist.html'">
+					</div>
+					<!-- <div class="vertical-scrollbar">
+						<div style="height:2000px"></div>
+					</div> -->
+				</div>
 			</div>
 		</div>
 	</div>
-
-
-	<!--<input ng-model="test" />
-	<p ng-mouseover="test = 'bbbb';" ng-mouseleave="test = 'aaaa'">aaaa</p>
-	<p>{{test}}</p>-->
-
-	<!--<input type="text" ng-model="rate">
-	<uib-rating ng-model="rate"></uib-rating>-->
-
-
-	<!--<form novalidate name="myForm">
-		<p><input type="text" name="name" ng-model="name" required ng-minlength="2" ng-maxlength="5"></p>
-		<p>{{name}}</p>
-		<p ng-show="myForm.name.$error.required">未入力</p>
-		<p ng-show="myForm.name.$error.minlength">2文字未満</p>
-		<p ng-show="myForm.name.$error.maxlength">5文字を超えている</p>
-	</form>-->
-	<!--<div>
-		<input ng-model="query" type="text" placeholder="表示したい曜日を入力" autofocus>
-		<p ng-bind="'テスト' + query + 'です。'"/>
-
-		<ul>
-			<li ng-repeat="day in week | filter: query ">{{day.jp}} {{day.en}}</li>
-		</ul>
-		<p>{{week.length}} days</p>
-		<ul>
-			<li ng-repeat="day in week" onSelectStart="return false;">{{day.jp}} {{day.en}}</li>
-		</ul>
-
-		<uib-tabset justified="true">
-			<uib-tab heading="Justified">{{dirResult}}</uib-tab>
-			<uib-tab heading="SJ">Short Labeled Justified content</uib-tab>
-			<uib-tab heading="Long Justified">Long Labeled Justified content</uib-tab>
-		</uib-tabset>
-
-	</div>-->
 </body>
+
 </html>
