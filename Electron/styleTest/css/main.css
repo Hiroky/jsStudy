@@ -33,6 +33,7 @@ body {
     width:256px;
     height: 100%;
     background-color:#2A2A2A;
+    -webkit-user-select: none;
 }
 
 .sidebar-container {
@@ -128,4 +129,25 @@ body {
 
 .navbar-fixed-top {
   border: 0;
+}
+
+
+.content-item.ng-enter {
+    transition: all linear 0.2s;
+    opacity: 0;
+}
+
+.content-item.ng-enter-active {
+    transition: all linear 0.2s;
+    opacity: 1;
+}
+
+.content-item.ng-leave {
+    transition: all linear 0.2s;
+    opacity: 1;
+}
+
+.content-item.ng-leave-active {
+    transition: all linear 0.2s;
+    opacity: 0;
 }

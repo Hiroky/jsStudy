@@ -1,7 +1,7 @@
 'use strict';
 var cproc = require('child_process');
 var fs = require('fs');
-var demoApp = angular.module('demoApp', ['ui.bootstrap']);
+var demoApp = angular.module('demoApp', ['ui.bootstrap', 'ngAnimate']);
 
 
 demoApp.controller("loopCtrl", ["$scope", "$q", function ($scope, $q) {
@@ -28,6 +28,8 @@ demoApp.controller("loopCtrl", ["$scope", "$q", function ($scope, $q) {
 			$scope.test = "その他のキーが押されました。";
 		}
 	};
+
+	$scope.content = "article";
 
 	// ファイル読み取り
 	$scope.articles = [];
