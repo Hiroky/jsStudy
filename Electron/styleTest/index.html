@@ -29,7 +29,6 @@
 
 			<div class="main-panel">
 				<div class="main-container">
-
 					<div class="main-content" ng-switch="content">
 						<div class="content-item" ng-switch-when="article">
 							<div ng-include="'./sourcelist.html'"></div>
@@ -42,7 +41,13 @@
 					<!-- <div class="vertical-scrollbar">
 						<div style="height:2000px"></div>
 					</div> -->
+				</div>
 
+				<div>
+					<input type="checkbox" ng-model="consoleVisible" />
+					<div class="console-panel" ng-show="consoleVisible" style="overflow:auto">
+						<pre>{{dirResult}}</pre>
+					</div>
 				</div>
 			</div>
 		</div>

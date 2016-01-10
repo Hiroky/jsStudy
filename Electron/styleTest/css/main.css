@@ -70,6 +70,7 @@ body {
     -webkit-flex: 1;
     -webkit-flex-flow: column;
     height:100%;
+    padding: 10px;
 }
 
 .main-container {
@@ -95,10 +96,13 @@ body {
 .main-container::-webkit-scrollbar {
     overflow: hidden;
     width: 8px;
-    background: #fafafa;
+    background: #404040;
     -webkit-border-radius: 3px;
     border-radius: 8px;
     margin: 10px;
+}
+.main-container::-webkit-scrollbar:hover {
+    background: #595959;
 }
 
     .main-container::-webkit-scrollbar:horizontal {
@@ -117,7 +121,10 @@ body {
     overflow: hidden;
     -webkit-border-radius: 3px;
     border-radius: 8px;
-    background: #333;
+    background: #b4b4b4;
+}
+.main-container::-webkit-scrollbar-thumb:hover {
+    background: #f7f7f7;
 }
 
 .main-container::-webkit-scrollbar-corner {
@@ -150,4 +157,14 @@ body {
 .content-item.ng-leave-active {
     transition: all linear 0.2s;
     opacity: 0;
+}
+
+
+.items-view {
+    padding: 0 20px;
+}
+
+.console-panel {
+    height:200px;
+    background-color:#0d0d0d;
 }

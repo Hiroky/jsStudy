@@ -1,7 +1,30 @@
-
 <!-- <h1 class="page-header">Dashboard</h1> -->
-<h2 class="sub-header">Section title</h2>
 
-<ul>
-	<li ng-repeat="a in articles">{{a.title}}</li>
-</ul>
+<div>
+	<p class="sub-header" style="float:left">ItemsView</p>
+	<input type="text" ng-model="searchKey" style="float:right" />
+	<div style="clear:both" />
+</div>
+<hr style="margin:5px 0"/>
+
+<div class="items-view">
+	<div class="panel" ng-repeat="a in articles | filter: searchKey">
+		<p>{{a.title}}</p>
+
+		<div class="btn-group" style="float:right" uib-dropdown>
+			<button id="split-button" type="button" class="btn btn-danger">Action</button>
+			<button type="button" class="btn btn-danger" uib-dropdown-toggle>
+				<span class="caret"></span>
+				<span class="sr-only">Split button!</span>
+			</button>
+			<ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
+				<li role="menuitem"><a href="#">Action</a></li>
+				<li role="menuitem"><a href="#">Another action</a></li>
+				<li role="menuitem"><a href="#">Something else here</a></li>
+				<li class="divider"></li>
+				<li role="menuitem"><a href="#">Separated link</a></li>
+			</ul>
+		</div>
+		<div style="clear:both">
+		</div>
+	</div>
