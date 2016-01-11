@@ -1,0 +1,181 @@
+
+@import "variables";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+	background-color: $body-bg;
+    color:#ccc;
+}
+
+
+.window-container {
+    display: block;
+    height: 100%;
+}
+
+.main-workspace {
+    display: -webkit-flex;
+    height: 100%;
+}
+
+
+/**
+ * side panel
+ */
+
+.side-panel {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-align-items: stretch;
+    width:256px;
+    height: 100%;
+    background-color:$side-panel-bg;
+    -webkit-user-select: none;
+}
+
+.sidebar-container {
+    width:100%;
+    padding:100px 0 0 0;
+}
+
+.nav-sidebar {
+    & > li {
+        & > a {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+
+    @mixin active {
+        color: #fff;
+        background-color: #428bca;
+    }
+
+    & > .active  {
+        & > a {
+            @include active;
+
+            &:hover, &:focus {
+                @include active;
+            }
+        }
+    }
+}
+
+
+/**
+ * main panel
+ */
+
+.main-panel {
+    position: relative;
+    display: -webkit-flex;
+    -webkit-flex: 1;
+    -webkit-flex-flow: column;
+    height:100%;
+    padding: 10px;
+}
+
+.main-container {
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        overflow: hidden;
+        width: 8px;
+        background: #404040;
+        -webkit-border-radius: 3px;
+        border-radius: 8px;
+        margin: 10px;
+
+        &:hover {
+            background: #595959;
+        }
+        &:horizontal {
+            height: 5px;
+        }
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-piece {
+        background: #eee;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        overflow: hidden;
+        -webkit-border-radius: 3px;
+        border-radius: 8px;
+        background: #b4b4b4;
+
+        &:hover {
+            background: #f7f7f7;
+        }
+    }
+
+    &::-webkit-scrollbar-corner {
+        overflow: hidden;
+        -webkit-border-radius: 3px;
+        border-radius: 8px;
+        background: #333;
+    }
+}
+
+.main-content {
+    padding:20px;
+}
+
+.vertical-scrollbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    width: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 3;
+    cursor: default;
+}
+
+
+.navbar-fixed-top {
+  border: 0;
+}
+
+.content-item {
+    &.ng-enter {
+        transition: all linear 0.2s;
+        opacity: 0;
+    }
+
+    &.ng-enter-active {
+        transition: all linear 0.2s;
+        opacity: 1;
+    }
+
+    &.ng-leave {
+        transition: all linear 0.2s;
+        opacity: 1;
+    }
+
+    &.ng-leave-active {
+        transition: all linear 0.2s;
+        opacity: 0;
+    }
+}
+
+.items-view {
+    padding: 0 20px;
+}
+
+.console-panel {
+    height:200px;
+    background-color:#0d0d0d;
+}
